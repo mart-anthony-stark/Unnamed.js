@@ -4,7 +4,7 @@ module.exports = (() => {
   let routes = [];
   let middlewares = [];
 
-  const insertRoute = (method, url, handler, options) =>
+  const insertRoute = (method, url, options, handler) =>
     routes.push({ url, method, handler, options });
 
   const findRoute = (method, url) => {
@@ -67,6 +67,22 @@ module.exports = (() => {
           }
 
           // Handling routes
+          const route = findRoute(req.method, req.url);
+          console.log(route);
+          if (!route) {
+            res.writeHead(404, {
+              "Content-Type": "text/plain",
+            });
+            res.end(
+              JSON.stringify({
+                url: req.url,
+                method: req.method,
+                msg: "Route not found",
+                statusCode: 404,
+              })
+            );
+            return;
+          }
         })
         .listen(port, (e) => {
           if (e) return console.log(e);
