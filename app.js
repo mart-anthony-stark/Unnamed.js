@@ -3,12 +3,16 @@ const lib = require("./src/lib");
 const app = lib({
   port: 3000,
   init: () => {
-    console.log("initialized server");
+    console.log("Martify");
   },
 });
 
+app.middleware(() => {
+  console.log("This is a middleware");
+});
+
 app.registerRouter({
-  prefix: "api",
+  prefix: "user",
   router: require("./user.route"),
 });
 
