@@ -8,11 +8,14 @@ module.exports = (() => {
     routes.push({ url, method, handler, options });
 
   const findRoute = (method, url) => {
-    return routes.find(
-      (route) =>
-        route.url.toLowerCase() === url.toLowerCase() &&
+    return routes.find((route) => {
+      let rUrl = route.url.toLowerCase();
+      url = url.toLowerCase();
+      return (
+        (rUrl === url || `${url}/` === rUrl) &&
         route.method.toLowerCase() === method.toLowerCase()
-    );
+      );
+    });
   };
 
   async function bodyParser(req) {
@@ -50,7 +53,7 @@ module.exports = (() => {
     // Custom Router
     const registerRouter = (routerOpts) => {
       const route = {
-        get: (url = "", options = {}, handler) => {
+        get: (url = "/", options = {}, handler) => {
           insertRoute(
             "get",
             `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
@@ -58,7 +61,7 @@ module.exports = (() => {
             options
           );
         },
-        post: (url = "", options = {}, handler) => {
+        post: (url = "/", options = {}, handler) => {
           insertRoute(
             "post",
             `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
@@ -66,7 +69,7 @@ module.exports = (() => {
             options
           );
         },
-        put: (url = "", options = {}, handler) => {
+        put: (url = "/", options = {}, handler) => {
           insertRoute(
             "put",
             `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
@@ -74,7 +77,7 @@ module.exports = (() => {
             options
           );
         },
-        patch: (url = "", options = {}, handler) => {
+        patch: (url = "/", options = {}, handler) => {
           insertRoute(
             "patch",
             `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
@@ -82,7 +85,7 @@ module.exports = (() => {
             options
           );
         },
-        delete: (url = "", options = {}, handler) => {
+        delete: (url = "/", options = {}, handler) => {
           insertRoute(
             "delete",
             `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
@@ -99,7 +102,7 @@ module.exports = (() => {
       http
         .createServer(async (req, res) => {
           await bodyParser(req);
-          console.log(routes);
+          console.log(routes[0].url);
 
           // Handling middlewares
           handleMiddlewares(req, res, (err) => {
