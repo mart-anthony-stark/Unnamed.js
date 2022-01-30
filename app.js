@@ -7,6 +7,11 @@ const app = lib({
   },
 });
 
+app.registerRouter({
+  prefix: "api",
+  router: require("./user.route"),
+});
+
 app.get("/", (req, res) => {
   res.code(401).send({ error: "Unauthorized" });
 });
