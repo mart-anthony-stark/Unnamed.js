@@ -47,10 +47,59 @@ module.exports = (() => {
     const del = (route, options = {}, handler) =>
       insertRoute("delete", route, handler, options);
 
+    // Custom Router
+    const registerRouter = (routerOpts) => {
+      const route = {
+        get: (url = "", options = {}, handler) => {
+          insertRoute(
+            "get",
+            `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
+            handler,
+            options
+          );
+        },
+        post: (url = "", options = {}, handler) => {
+          insertRoute(
+            "post",
+            `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
+            handler,
+            options
+          );
+        },
+        put: (url = "", options = {}, handler) => {
+          insertRoute(
+            "put",
+            `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
+            handler,
+            options
+          );
+        },
+        patch: (url = "", options = {}, handler) => {
+          insertRoute(
+            "patch",
+            `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
+            handler,
+            options
+          );
+        },
+        delete: (url = "", options = {}, handler) => {
+          insertRoute(
+            "delete",
+            `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
+            handler,
+            options
+          );
+        },
+      };
+
+      routerOpts.router(route);
+    };
+
     const listen = (port, cb) => {
       http
         .createServer(async (req, res) => {
           await bodyParser(req);
+          console.log(routes);
 
           // Handling middlewares
           handleMiddlewares(req, res, (err) => {
@@ -141,6 +190,7 @@ module.exports = (() => {
       patch,
       delete: del,
       listen,
+      registerRouter,
     };
   };
 
