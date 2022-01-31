@@ -1,4 +1,12 @@
 const userRouter = (route) => {
+  route.get("/", { beforeEnter: [] }, (req, res) => {
+    res.send({
+      data: "this is a user router",
+      method: req.method,
+      url: req.url,
+    });
+  });
+
   route.get("/name", (req, res) => {
     res.send({
       data: "this is a user router",
@@ -11,6 +19,7 @@ const userRouter = (route) => {
       data: "this is a user router",
       method: req.method,
       url: req.url,
+      body: req.body,
     });
   });
   route.put("/", (req, res) => {
@@ -18,6 +27,7 @@ const userRouter = (route) => {
       data: "this is a user router",
       method: req.method,
       url: req.url,
+      body: req.body,
     });
   });
   route.patch("/", (req, res) => {
@@ -25,6 +35,7 @@ const userRouter = (route) => {
       data: "this is a user router",
       method: req.method,
       url: req.url,
+      body: req.body,
     });
   });
   route.delete("/", (req, res) => {
@@ -32,6 +43,7 @@ const userRouter = (route) => {
       data: "this is a user router",
       method: req.method,
       url: req.url,
+      body: req.body,
     });
   });
 };
