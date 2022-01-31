@@ -54,44 +54,59 @@ module.exports = (() => {
     const registerRouter = (routerOpts) => {
       const prefix = routerOpts.prefix;
       const route = {
-        get: (url, options = {}, handler) => {
+        get: (url, ...rest) => {
+          if (rest.length < 2 && typeof rest[0] !== "function")
+            throw new Error("varArgs : no callbacks specified");
+
           insertRoute(
             "get",
             `${prefix ? "/" + prefix + url : url + "/"}`,
-            handler,
-            options
+            rest.length === 2 ? rest[0] : null,
+            rest.length === 1 ? rest[0] : rest[1]
           );
         },
-        post: (url, options = {}, handler) => {
+        post: (url, ...rest) => {
+          if (rest.length < 2 && typeof rest[0] !== "function")
+            throw new Error("varArgs : no callbacks specified");
+
           insertRoute(
             "post",
             `${prefix ? "/" + prefix + url : url + "/"}`,
-            handler,
-            options
+            rest.length === 2 ? rest[0] : null,
+            rest.length === 1 ? rest[0] : rest[1]
           );
         },
-        put: (url, options = {}, handler) => {
+        put: (url, ...rest) => {
+          if (rest.length < 2 && typeof rest[0] !== "function")
+            throw new Error("varArgs : no callbacks specified");
+
           insertRoute(
             "put",
             `${prefix ? "/" + prefix + url : url + "/"}`,
-            handler,
-            options
+            rest.length === 2 ? rest[0] : null,
+            rest.length === 1 ? rest[0] : rest[1]
           );
         },
-        patch: (url, options = {}, handler) => {
+        patch: (url, ...rest) => {
+          if (rest.length < 2 && typeof rest[0] !== "function")
+            throw new Error("varArgs : no callbacks specified");
+
           insertRoute(
             "patch",
             `${prefix ? "/" + prefix + url : url + "/"}`,
-            handler,
-            options
+            rest.length === 2 ? rest[0] : null,
+            rest.length === 1 ? rest[0] : rest[1]
           );
         },
-        delete: (url, options = {}, handler) => {
+        delete: (url, ...rest) => {
+          if (rest.length < 2 && typeof rest[0] !== "function")
+            throw new Error("varArgs : no callbacks specified");
+
           insertRoute(
             "delete",
             `${prefix ? "/" + prefix + url : url + "/"}`,
-            handler,
-            options
+            rest.length === 2 ? rest[0] : null,
+            rest.length === 1 ? rest[0] : rest[1]
           );
         },
       };
