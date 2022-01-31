@@ -12,7 +12,7 @@ module.exports = (() => {
       let rUrl = route.url.toLowerCase();
       url = url.toLowerCase();
       return (
-        (rUrl === url || `${url}/` === rUrl) &&
+        (rUrl === url || `${url}/` === rUrl || `${rUrl}/` === url) &&
         route.method.toLowerCase() === method.toLowerCase()
       );
     });
@@ -52,43 +52,44 @@ module.exports = (() => {
 
     // Custom Router
     const registerRouter = (routerOpts) => {
+      const prefix = routerOpts.prefix;
       const route = {
-        get: (url = "/", options = {}, handler) => {
+        get: (url, options = {}, handler) => {
           insertRoute(
             "get",
-            `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
+            `${prefix ? "/" + prefix + url : url + "/"}`,
             handler,
             options
           );
         },
-        post: (url = "/", options = {}, handler) => {
+        post: (url, options = {}, handler) => {
           insertRoute(
             "post",
-            `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
+            `${prefix ? "/" + prefix + url : url + "/"}`,
             handler,
             options
           );
         },
-        put: (url = "/", options = {}, handler) => {
+        put: (url, options = {}, handler) => {
           insertRoute(
             "put",
-            `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
+            `${prefix ? "/" + prefix + url : url + "/"}`,
             handler,
             options
           );
         },
-        patch: (url = "/", options = {}, handler) => {
+        patch: (url, options = {}, handler) => {
           insertRoute(
             "patch",
-            `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
+            `${prefix ? "/" + prefix + url : url + "/"}`,
             handler,
             options
           );
         },
-        delete: (url = "/", options = {}, handler) => {
+        delete: (url, options = {}, handler) => {
           insertRoute(
             "delete",
-            `${routerOpts.prefix && "/" + routerOpts.prefix}${url}`,
+            `${prefix ? "/" + prefix + url : url + "/"}`,
             handler,
             options
           );
@@ -102,7 +103,7 @@ module.exports = (() => {
       http
         .createServer(async (req, res) => {
           await bodyParser(req);
-          console.log(routes[0].url);
+          console.log(routes);
 
           // Handling middlewares
           handleMiddlewares(req, res, (err) => {
