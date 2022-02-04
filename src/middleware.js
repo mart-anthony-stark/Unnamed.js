@@ -1,28 +1,12 @@
 async function handleMiddlewares(middlewares, req, res, callback) {
-  let index = 0;
-
-  middlewares.forEach(async (fn) => {
-    await fn(req, res);
-  });
-
-  //   const next = (err) => {
-  //     if (err != null) {
-  //       return setImmediate(() => callback(err));
-  //     }
-  //     if (index >= middlewares.length) {
-  //       return setImmediate(() => callback());
-  //     }
-
-  //     const layer = middlewares[index++];
-  //     setImmediate(() => {
-  //       try {
-  //         layer(req, res, next);
-  //       } catch (error) {
-  //         next(error);
-  //       }
-  //     });
-  //   };
-  //   next();
+  let i = 0;
+  const next = async () => {
+    let fn = middlewares[i++];
+    if (i <= middlewares.length) {
+      await fn(req, res, next);
+    }
+  };
+  next();
 }
 
 module.exports = handleMiddlewares;
