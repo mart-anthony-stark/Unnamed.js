@@ -1,9 +1,9 @@
-const lib = require("./src/lib");
+const lib = require("./src");
 
 const app = lib({
   port: 3000,
   init: () => {
-    console.log("Martify");
+    console.log("App is running");
   },
 });
 
