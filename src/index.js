@@ -1,4 +1,5 @@
 const http = require("http");
+const handleMiddlewares = require("./middleware");
 
 module.exports = (() => {
   let routes = [];
@@ -114,42 +115,19 @@ module.exports = (() => {
       routerOpts.router(route);
     };
 
-    const listen = (port, cb) => {
+    const listen = async (port, cb) => {
       http
         .createServer(async (req, res) => {
           await bodyParser(req);
-          console.log(routes);
+          // console.log(routes);
 
           // Handling middlewares
-          handleMiddlewares(req, res, (err) => {
+          await handleMiddlewares(middlewares, req, res, (err) => {
             if (err) {
               res.writeHead(500);
               res.end("Something went wrong");
             }
           });
-
-          function handleMiddlewares(req, res, callback) {
-            let index = 0;
-
-            const next = (err) => {
-              if (err != null) {
-                return setImmediate(() => callback(err));
-              }
-              if (index >= middlewares.length) {
-                return setImmediate(() => callback());
-              }
-
-              const layer = middlewares[index++];
-              setImmediate(() => {
-                try {
-                  layer(req, res, next);
-                } catch (error) {
-                  next(error);
-                }
-              });
-            };
-            next();
-          }
 
           // Handling routes
           const route = findRoute(req.method, req.url);
