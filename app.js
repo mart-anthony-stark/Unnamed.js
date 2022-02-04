@@ -1,6 +1,6 @@
-const lib = require("./src");
+const framework = require("./src");
 
-const app = lib({
+const app = framework({
   port: 3000,
   init: () => {
     console.log("App is running");
