@@ -7,8 +7,16 @@ const app = framework({
   },
 });
 
-app.middleware(() => {
-  console.log("This is a middleware");
+app.middleware((req, res, done) => {
+  console.log("This is middleware 1");
+  req.user = "mart";
+  done();
+});
+
+app.middleware((req, res, done) => {
+  console.log("This is middleware 2");
+  console.log(req.user);
+  done();
 });
 
 app.registerRouter({
@@ -17,10 +25,10 @@ app.registerRouter({
 });
 
 app.get("/", (req, res) => {
-  res.code(401).send({ error: "Unauthorized" });
+  console.log(req.user);
+  res.code(401).send({ data: { user: req.user }, error: "Unauthorized" });
 });
 app.post("/", (req, res) => {
-  console.log(req.body);
   res.code(200).send({ Created: req.body });
 });
 app.put("/", (req, res) => {
