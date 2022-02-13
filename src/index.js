@@ -1,5 +1,6 @@
 const http = require("http");
 const handleMiddlewares = require("./middleware");
+const findRoute = require("./findRoute");
 
 module.exports = (() => {
   let routes = [];
@@ -7,17 +8,6 @@ module.exports = (() => {
 
   const insertRoute = (method, url, options, handler) =>
     routes.push({ url, method, handler, options });
-
-  const findRoute = (method, url) => {
-    return routes.find((route) => {
-      let rUrl = route.url.toLowerCase();
-      url = url.toLowerCase();
-      return (
-        (rUrl === url || `${url}/` === rUrl || `${rUrl}/` === url) &&
-        route.method.toLowerCase() === method.toLowerCase()
-      );
-    });
-  };
 
   async function bodyParser(req) {
     //   Listening to data event and attatch to req.body
@@ -130,7 +120,7 @@ module.exports = (() => {
           });
 
           // Handling routes
-          const route = findRoute(req.method, req.url);
+          const route = findRoute(routes, req.method, req.url);
           if (route) {
             let status = 200;
             res.code = (statusCode) => {
