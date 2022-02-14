@@ -24,24 +24,28 @@ app.registerRouter({
   router: require("./user.route"),
 });
 
+app.get("/", (req, res) => {
+  console.log(req.user);
+  res.code(401).send({ data: { user: req.user }, error: "Unauthorized" });
+});
+
 app.get("/:id", (req, res) => {
   console.log(req.params);
   res.code(200).send({ id: req.params.id });
 });
 
-app.get("/", (req, res) => {
-  console.log(req.user);
-  res.code(401).send({ data: { user: req.user }, error: "Unauthorized" });
-});
 app.post("/", (req, res) => {
   res.code(200).send({ Created: req.body });
 });
+
 app.put("/", (req, res) => {
   res.send({ msg: "Modified" });
 });
+
 app.patch("/", (req, res) => {
   res.code(200).send({ msg: "Updated" });
 });
+
 app.delete("/", (req, res) => {
   res.code(200).send("Ok");
 });
