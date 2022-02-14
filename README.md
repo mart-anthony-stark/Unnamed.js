@@ -12,8 +12,10 @@ const unnamed = require("./src");
 const app = unnamed({
   port: 3000,
   init: () => {
-    // This will run when as the server initializes
+    // This will run as the server initializes
     console.log("App is running");
   },
 });
 ```
+Server started
+[!server](https://github.com/mart-anthony-stark/Unnamed.js/blob/main/docs/start%20server.png?raw=true)
