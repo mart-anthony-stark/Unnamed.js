@@ -2,7 +2,7 @@ const http = require("http");
 const handleMiddlewares = require("./middleware");
 const findRoute = require("./findRoute");
 const bodyParser = require("./bodyParser");
-const Route = require("route-parser");
+const Route = require("./route-parser");
 
 module.exports = (() => {
   let routes = [];
