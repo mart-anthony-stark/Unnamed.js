@@ -1,3 +1,3 @@
-const Route = require('route-parser')
+const Route = require("./src/route-parser");
 
-console.log(new Route('/users/:id'))
+console.log(new Route("/users/:id"));
