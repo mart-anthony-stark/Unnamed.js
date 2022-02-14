@@ -116,6 +116,7 @@ module.exports = (() => {
           const route = findRoute(routes, method, url);
           if (route) {
             let status = 200;
+            req.params = route.params;
             res.code = (statusCode) => {
               status = statusCode;
               return res;
