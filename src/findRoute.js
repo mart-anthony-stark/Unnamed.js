@@ -1,4 +1,4 @@
-const Route = require("route-parser");
+const Route = require("./route-parser");
 
 const findRoute = (routes, method, url) => {
   return routes.find((route) => {
