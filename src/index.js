@@ -8,8 +8,13 @@ module.exports = (() => {
   let routes = [];
   let middlewares = [];
 
-  const insertRoute = (method, url, options, handler) =>
+  const insertRoute = (method, url, options, handler) => {
+    // DELETES EXTRA SLASH IN THE TAIL OF THE PATH
+    if (url.substring(url.length - 1) === "/" && url.length !== 1)
+      url = url = url.slice(0, url.length - 1);
+
     routes.push({ url: new Route(url), method, handler, options });
+  };
 
   const app = (options) => {
     const middleware = (middlewareHandler) => {
