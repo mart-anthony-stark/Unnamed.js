@@ -1,0 +1,19 @@
+{
+  "name": "martify",
+  "version": "1.0.0",
+  "description": "A minimal node http server framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mart-anthony-stark/Node-http-library-implementation.git"
+  },
+  "author": "Mart Salazar | mart-anthony-stark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mart-anthony-stark/Node-http-library-implementation/issues"
+  },
+  "homepage": "https://github.com/mart-anthony-stark/Node-http-library-implementation#readme"
+}
