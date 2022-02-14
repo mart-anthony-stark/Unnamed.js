@@ -3,6 +3,7 @@ const handleMiddlewares = require("./middleware");
 const findRoute = require("./findRoute");
 const bodyParser = require("./bodyParser");
 const Route = require("./route-parser");
+const queryParser = require("./query-parser");
 
 module.exports = (() => {
   let routes = [];
@@ -100,7 +101,7 @@ module.exports = (() => {
       http
         .createServer(async (req, res) => {
           await bodyParser(req);
-          console.log(routes);
+          // console.log(routes);
 
           // Handling middlewares
           await handleMiddlewares(middlewares, req, res, (err) => {
@@ -112,7 +113,12 @@ module.exports = (() => {
 
           // Handling routes
           const method = req.method.toLowerCase();
-          const url = req.url.toLowerCase();
+          let url = req.url.toLowerCase();
+          if (url.includes("?")) {
+            const path = url.split("?");
+            url = path[0];
+            req.query = queryParser(path[1]);
+          }
           const route = findRoute(routes, method, url);
           if (route) {
             let status = 200;
