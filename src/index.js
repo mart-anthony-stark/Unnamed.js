@@ -101,7 +101,6 @@ module.exports = (() => {
       http
         .createServer(async (req, res) => {
           await bodyParser(req);
-          // console.log(routes);
 
           // Handling middlewares
           await handleMiddlewares(middlewares, req, res, (err) => {
