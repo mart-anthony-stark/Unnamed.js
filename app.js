@@ -24,6 +24,11 @@ app.registerRouter({
   router: require("./user.route"),
 });
 
+app.get("/:id", (req, res) => {
+  console.log(req.params);
+  res.code(200).send({ id: req.params.id });
+});
+
 app.get("/", (req, res) => {
   console.log(req.user);
   res.code(401).send({ data: { user: req.user }, error: "Unauthorized" });
