@@ -106,7 +106,9 @@ module.exports = (() => {
           });
 
           // Handling routes
-          const route = findRoute(routes, req.method, req.url);
+          const method = req.method.toLowerCase();
+          const url = req.url.toLowerCase();
+          const route = findRoute(routes, method, url);
           if (route) {
             let status = 200;
             res.code = (statusCode) => {
