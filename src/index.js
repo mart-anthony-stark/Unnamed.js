@@ -1,29 +1,15 @@
 const http = require("http");
 const handleMiddlewares = require("./middleware");
 const findRoute = require("./findRoute");
+const bodyParser = require("./bodyParser");
+const Route = require("route-parser");
 
 module.exports = (() => {
   let routes = [];
   let middlewares = [];
 
   const insertRoute = (method, url, options, handler) =>
-    routes.push({ url, method, handler, options });
-
-  async function bodyParser(req) {
-    //   Listening to data event and attatch to req.body
-    return new Promise((resolve, reject) => {
-      let body = "";
-      req.on("data", (chunk) => {
-        body += chunk.toString();
-      });
-      req.on("end", () => {
-        if (body !== "") {
-          req.body = JSON.parse(body);
-          resolve();
-        } else resolve();
-      });
-    });
-  }
+    routes.push({ url: new Route(url), method, handler, options });
 
   const app = (options) => {
     const middleware = (middlewareHandler) => {
@@ -109,7 +95,7 @@ module.exports = (() => {
       http
         .createServer(async (req, res) => {
           await bodyParser(req);
-          // console.log(routes);
+          console.log(routes);
 
           // Handling middlewares
           await handleMiddlewares(middlewares, req, res, (err) => {
