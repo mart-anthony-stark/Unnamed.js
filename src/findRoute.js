@@ -1,5 +1,3 @@
-const Route = require("./route-parser");
-
 const findRoute = (routes, method, url) => {
   // delete extra slash to end of the entered url
   if (url.substring(url.length - 1) === "/" && url.length !== 1) {
