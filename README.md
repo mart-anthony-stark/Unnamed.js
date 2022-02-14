@@ -5,7 +5,9 @@ A minimal node http server framework
 [Getting Started](https://github.com/mart-anthony-stark/Unnamed.js#getting-started)
 
 ### Getting started
+
 Call the unnamed function and assign it to a variable
+
 ```javascript
 const unnamed = require("./src");
 
@@ -17,5 +19,6 @@ const app = unnamed({
   },
 });
 ```
+
 Server started
-[!server](https://github.com/mart-anthony-stark/Unnamed.js/blob/main/docs/start%20server.png?raw=true)
+![server](https://github.com/mart-anthony-stark/Unnamed.js/blob/main/docs/start%20server.png?raw=true)
