@@ -170,11 +170,11 @@ module.exports = (() => {
 
     return {
       middleware,
-      get,
-      post,
-      put,
-      patch,
-      delete: del,
+      GET: get,
+      POST: post,
+      PUT: put,
+      PATCH: patch,
+      DELETE: del,
       listen,
       registerRouter,
     };
