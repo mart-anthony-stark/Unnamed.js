@@ -33,7 +33,7 @@ module.exports = (() => {
     const del = (route, options = {}, handler) =>
       insertRoute("delete", route, handler, options);
 
-    // Custom Router
+    // Modular Router
     const registerRouter = (routerOpts) => {
       const prefix = routerOpts.prefix;
       const route = {
@@ -126,7 +126,7 @@ module.exports = (() => {
               status = statusCode;
               return res;
             };
-            res.send = (ctx) => {
+            res.send = (ctx, contentType) => {
               try {
                 //   Auto converts to JSON if possible
                 ctx = JSON.stringify(ctx);
@@ -135,7 +135,7 @@ module.exports = (() => {
                 });
               } catch (error) {
                 res.writeHead(status, {
-                  "Content-Type": "text/plain",
+                  "Content-Type": contentType || "text/plain",
                 });
               }
               res.end(ctx);
