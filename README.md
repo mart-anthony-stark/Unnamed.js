@@ -34,19 +34,19 @@ This framework supports the 5 commonly-used HTTP request methods. The methods ca
 - DELETE
 
 ```javascript
-server.GET("/", (req, res) => {
-  res.code(200).send({ method: req.method, msg: "Hello world" });
+server.GET("/", (request, response) => {
+  response.code(200).send({ method: request.method, msg: "Hello world" });
 });
-server.POST("/", (req, res) => {
-  res.code(200).send({ method: req.method, msg: "Hello world" });
+server.POST("/", (request, response) => {
+  response.code(200).send({ method: request.method, msg: "Hello world" });
 });
-server.PUT("/", (req, res) => {
-  res.code(200).send({ method: req.method, msg: "Hello world" });
+server.PUT("/", (request, response) => {
+  response.code(200).send({ method: request.method, msg: "Hello world" });
 });
-server.PATCH("/", (req, res) => {
-  res.code(200).send({ method: req.method, msg: "Hello world" });
+server.PATCH("/", (request, response) => {
+  response.code(200).send({ method: request.method, msg: "Hello world" });
 });
-server.DELETE("/", (req, res) => {
-  res.code(200).send({ method: req.method, msg: "Hello world" });
+server.DELETE("/", (request, response) => {
+  response.code(200).send({ method: request.method, msg: "Hello world" });
 });
 ```
