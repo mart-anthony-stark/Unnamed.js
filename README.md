@@ -106,6 +106,24 @@ the server object comes up with a registerRouter() method to include routes from
 ```javascript
 server.registerRouter({
   prefix: "users", // will be added to the URL path
-  router: require("./routes/user"),
+  router: require("./routes/user.route"),
 });
 ```
+
+- Inside 'routes/user.route.js' file, define a function that accepts 'route' parameter
+
+```javascript
+const userRouter = (route) => {
+  route.GET("/all", { beforeEnter: [] }, (req, res) => {
+    res.send({
+      data: "this is a user router",
+      method: req.method,
+      url: req.url,
+    });
+  });
+};
+
+module.exports = userRouter;
+```
+
+- Since there is a prefix indicated in the registerRouter() method, sample endpoint will look like this: http://localhost:5000/user/all
