@@ -6,6 +6,8 @@ A minimal node http server framework
 - [Routes](https://github.com/mart-anthony-stark/Unnamed.js#routes)
 - [Request](https://github.com/mart-anthony-stark/Unnamed.js#request-object)
 - [Response](https://github.com/mart-anthony-stark/Unnamed.js#response-methods)
+- [Modular Routing](https://github.com/mart-anthony-stark/Unnamed.js#router-for-modular-code)
+- [Setup Demo](https://github.com/mart-anthony-stark/Unnamed.js/tree/main/demoV2)
 
 ### Getting started
 
@@ -96,3 +98,14 @@ server.DELETE("/", (request, response) => {
   }
   server.send(body)
   ```
+
+### Router for modular code
+
+the server object comes up with a registerRouter() method to include routes from another javascript file
+
+```javascript
+server.registerRouter({
+  prefix: "users", // will be added to the URL path
+  router: require("./routes/user"),
+});
+```
