@@ -87,7 +87,7 @@ server.DELETE("/", (request, response) => {
   - Syntax:
   ```typescript
   const status: number = 200;
-  server.code(200);
+  server.code(status);
   ```
 - send() - This method basically sends the HTTP response. The body parameter can be a String or a Buffer object or an object or an Array. It accepts a single parameter body that describe the body which is to be sent in the response. It also automatically parse the body into JSON if possible.
   - Syntax:
