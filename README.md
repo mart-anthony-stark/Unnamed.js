@@ -25,7 +25,7 @@ const server = unnamed({
 
 ### Routes
 
-This framework supports the 5 commonly-used HTTP request methods
+This framework supports the 5 commonly-used HTTP request methods. The methods can be accessed through the returned server object
 
 - GET
 - POST
