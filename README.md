@@ -127,3 +127,30 @@ module.exports = userRouter;
 ```
 
 - Since there is a prefix indicated in the registerRouter() method, sample endpoint will look like this: http://localhost:5000/user/all
+
+### Combine Routers
+
+Another option for registering routers is to combine them using combineRouters() method.
+
+- For example, you have two routers: auth and users
+
+```javascript
+// app.js
+server.combineRouters(require("./routes"));
+```
+
+```javascript
+// routes/index.js
+const routes = [
+  {
+    prefix: "users",
+    router: require("./user.route"),
+  },
+  {
+    prefix: "auth",
+    router: require("./auth.route"),
+  },
+];
+
+module.exports = routes;
+```
