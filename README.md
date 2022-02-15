@@ -24,6 +24,12 @@ const server = unnamed({
   ![server](https://github.com/mart-anthony-stark/Unnamed.js/blob/main/docs/start%20server.png?raw=true)
 
 ### Routes
+This framework supports the 5 commonly-used HTTP request methods
+- GET
+- POST
+- PUT
+- PATCH
+- DELETE
 
 ```javascript
 server.get("/", (req, res) => {
