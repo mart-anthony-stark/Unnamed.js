@@ -2,8 +2,9 @@
 
 A minimal node http server framework
 
-[Getting Started](https://github.com/mart-anthony-stark/Unnamed.js#getting-started)
-[Routes](https://github.com/mart-anthony-stark/Unnamed.js#routes)
+- [Getting Started](https://github.com/mart-anthony-stark/Unnamed.js#getting-started)
+- [Routes](https://github.com/mart-anthony-stark/Unnamed.js#routes)
+- [Response](https://github.com/mart-anthony-stark/Unnamed.js#response-methods)
 
 ### Getting started
 
