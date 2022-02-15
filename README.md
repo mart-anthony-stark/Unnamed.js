@@ -27,6 +27,6 @@ const server = unnamed({
 
 ```javascript
 server.get("/", (req, res) => {
-  res.code(401).send({ data: { user: req.user }, error: "Unauthorized" });
+  res.code(401).send({ msg: "Hello world" });
 });
 ```
