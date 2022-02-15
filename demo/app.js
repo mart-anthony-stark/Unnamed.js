@@ -24,6 +24,7 @@ server.registerRouter({
   router: require("./user.route"),
 });
 
+
 server.GET("/", (req, res) => {
   console.log(req.user);
   console.log({ query: req.query });
