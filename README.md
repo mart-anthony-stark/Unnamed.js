@@ -11,7 +11,7 @@ Call the unnamed function and assign it to a variable
 ```javascript
 const unnamed = require("./src");
 
-const app = unnamed({
+const server = unnamed({
   port: 3000,
   init: () => {
     // This will run as the server initializes
@@ -20,5 +20,13 @@ const app = unnamed({
 });
 ```
 
-Server started
-![server](https://github.com/mart-anthony-stark/Unnamed.js/blob/main/docs/start%20server.png?raw=true)
+- Server started
+  ![server](https://github.com/mart-anthony-stark/Unnamed.js/blob/main/docs/start%20server.png?raw=true)
+
+### Routes
+
+```javascript
+server.get("/", (req, res) => {
+  res.code(401).send({ data: { user: req.user }, error: "Unauthorized" });
+});
+```
