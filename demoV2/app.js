@@ -21,6 +21,12 @@ const server = unnamed({
 });
 
 server.middleware(cors("*"));
+
+server.registerRouter({
+  prefix: "users",
+  router: require("./routes/user"),
+});
+
 server.GET("/", (req, res) => {
   res.send("hello");
 });
