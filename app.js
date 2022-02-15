@@ -26,7 +26,7 @@ server.registerRouter({
 
 server.GET("/", (req, res) => {
   console.log(req.user);
-  console.log({ name: req.query.name });
+  console.log({ query: req.query });
   res.code(401).send({ data: { user: req.user }, error: "Unauthorized" });
 });
 
