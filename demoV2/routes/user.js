@@ -1,7 +1,7 @@
+const userController = require("../controllers/user.controller");
+
 const userRouter = (router) => {
-  router.GET("/", (req, res) => {
-    res.send("USERS");
-  });
+  router.GET("/", userController.getAllUsers);
 };
 
 module.exports = userRouter;
