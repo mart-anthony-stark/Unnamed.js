@@ -50,3 +50,22 @@ server.DELETE("/", (request, response) => {
   response.code(200).send({ method: request.method, msg: "Hello world" });
 });
 ```
+
+### Response methods
+
+- code() - This method sets the response status code. If you want to know more about HTTP status codes, visit [MDN Web Documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+  - Syntax:
+  ```typescript
+  const status: number = 200;
+  server.code(200);
+  ```
+- send() - This method basically sends the HTTP response. The body parameter can be a String or a Buffer object or an object or an Array. It accepts a single parameter body that describe the body which is to be sent in the response.
+  - Syntax:
+  ```javascript
+  const body = {
+    id: 123456,
+    name: Mart Anthony Salazar,
+    age: 19
+  }
+  server.send(body)
+  ```
