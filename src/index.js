@@ -37,7 +37,7 @@ module.exports = (() => {
     const registerRouter = (routerOpts) => {
       const prefix = routerOpts.prefix;
       const route = {
-        get: (url, ...rest) => {
+        GET: (url, ...rest) => {
           if (rest.length < 2 && typeof rest[0] !== "function")
             throw new Error("varArgs : no callbacks specified");
 
@@ -48,7 +48,7 @@ module.exports = (() => {
             rest.length === 1 ? rest[0] : rest[1]
           );
         },
-        post: (url, ...rest) => {
+        POST: (url, ...rest) => {
           if (rest.length < 2 && typeof rest[0] !== "function")
             throw new Error("varArgs : no callbacks specified");
 
@@ -59,7 +59,7 @@ module.exports = (() => {
             rest.length === 1 ? rest[0] : rest[1]
           );
         },
-        put: (url, ...rest) => {
+        PUT: (url, ...rest) => {
           if (rest.length < 2 && typeof rest[0] !== "function")
             throw new Error("varArgs : no callbacks specified");
 
@@ -70,7 +70,7 @@ module.exports = (() => {
             rest.length === 1 ? rest[0] : rest[1]
           );
         },
-        patch: (url, ...rest) => {
+        PATCH: (url, ...rest) => {
           if (rest.length < 2 && typeof rest[0] !== "function")
             throw new Error("varArgs : no callbacks specified");
 
@@ -81,7 +81,7 @@ module.exports = (() => {
             rest.length === 1 ? rest[0] : rest[1]
           );
         },
-        delete: (url, ...rest) => {
+        DELETE: (url, ...rest) => {
           if (rest.length < 2 && typeof rest[0] !== "function")
             throw new Error("varArgs : no callbacks specified");
 
