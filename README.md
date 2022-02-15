@@ -4,6 +4,7 @@ A minimal node http server framework
 
 - [Getting Started](https://github.com/mart-anthony-stark/Unnamed.js#getting-started)
 - [Routes](https://github.com/mart-anthony-stark/Unnamed.js#routes)
+- [Request](https://github.com/mart-anthony-stark/Unnamed.js#request-object)
 - [Response](https://github.com/mart-anthony-stark/Unnamed.js#response-methods)
 
 ### Getting started
@@ -51,6 +52,31 @@ server.DELETE("/", (request, response) => {
   response.code(200).send({ method: request.method, msg: "Hello world" });
 });
 ```
+
+### Request object
+
+- query - endpoint queries can be accessed through request.query object
+
+  - Sample endpoint: http://localhost:3000/user?name=mart&age=19
+
+  ```javascript
+  server.get("/user", (request, response) => {
+    res.send({
+      username: request.query.name,
+      age: request.query.age,
+    });
+  });
+  ```
+
+- params - Params object contains parameter values parsed from the URL path
+  - Sample endpoint: http://localhost:3000/user/123456
+  ```javascript
+  server.get("/user/:id", (request, response) => {
+    res.send({
+      userId: request.params.id,
+    });
+  });
+  ```
 
 ### Response methods
 
