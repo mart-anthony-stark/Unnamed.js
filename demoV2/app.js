@@ -22,10 +22,7 @@ const server = unnamed({
 
 server.middleware(cors("*"));
 
-server.registerRouter({
-  prefix: "users",
-  router: require("./routes/user"),
-});
+server.combineRouters(require("./routes"));
 
 server.GET("/", (req, res) => {
   res.send("hello");
