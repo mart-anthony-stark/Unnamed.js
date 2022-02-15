@@ -97,6 +97,12 @@ module.exports = (() => {
       routerOpts.router(route);
     };
 
+    const combineRouters = (routers) => {
+      routers.forEach((router) => {
+        registerRouter(router);
+      });
+    };
+
     const listen = async (port, cb) => {
       http
         .createServer(async (req, res) => {
@@ -177,6 +183,7 @@ module.exports = (() => {
       DELETE: del,
       listen,
       registerRouter,
+      combineRouters,
     };
   };
 
