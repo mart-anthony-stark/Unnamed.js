@@ -35,6 +35,6 @@ This framework supports the 5 commonly-used HTTP request methods
 
 ```javascript
 server.GET("/", (req, res) => {
-  res.code(401).send({ msg: "Hello world" });
+  res.code(200).send({ msg: "Hello world" });
 });
 ```
