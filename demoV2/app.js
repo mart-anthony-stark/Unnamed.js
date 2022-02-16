@@ -1,4 +1,4 @@
-const unnamed = require("../src");
+const unnamed = require("unnamed-js");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
