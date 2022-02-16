@@ -12,6 +12,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "mongoose": "^6.2.1"
+    "mongoose": "^6.2.1",
+    "unnamed-js": "^1.0.0"
   }
 }
