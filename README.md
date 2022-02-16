@@ -8,7 +8,7 @@ A minimal node http server framework by [Mart Anthony Salazar](https://github.co
 - [Response](https://github.com/mart-anthony-stark/Unnamed.js#response-methods)
 - [Modular Routing](https://github.com/mart-anthony-stark/Unnamed.js#router-for-modular-code)
 - [Combine Routers](https://github.com/mart-anthony-stark/Unnamed.js#combine-routers)
-- [Setup Demo](https://github.com/mart-anthony-stark/Unnamed.js/tree/main/demoV2)
+- [Setup Demo](https://github.com/mart-anthony-stark/Unnamed.js/tree/test-package/demoV2)
 
 ### Getting started
 
