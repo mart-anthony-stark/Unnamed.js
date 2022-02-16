@@ -1,6 +1,6 @@
 {
   "name": "unnamed-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal node http server framework",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/mart-anthony-stark/Node-http-library-implementation.git"
   },
+  "keywords": ["http-server", "node", "unnamed", "api"],
   "author": "Mart Salazar | mart-anthony-stark",
   "license": "ISC",
   "bugs": {
