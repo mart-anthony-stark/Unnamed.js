@@ -63,7 +63,7 @@ server.DELETE("/", (request, response) => {
   - Sample endpoint: http://localhost:3000/user?name=mart&age=19
 
   ```javascript
-  server.get("/user", (request, response) => {
+  server.GET("/user", (request, response) => {
     res.send({
       username: request.query.name,
       age: request.query.age,
@@ -72,14 +72,26 @@ server.DELETE("/", (request, response) => {
   ```
 
 - params - Params object contains parameter values parsed from the URL path
+
   - Sample endpoint: http://localhost:3000/user/123456
+
   ```javascript
-  server.get("/user/:id", (request, response) => {
+  server.GET("/user/:id", (request, response) => {
     res.send({
       userId: request.params.id,
     });
   });
   ```
+
+- body - The read-only body property of the Request interface contains a ReadableStream with the body contents that have been added to the request.
+
+```javascript
+server.POST("/post", async (request, response) => {
+  const post = await new Post(request.body).save();
+  res.send(post);
+});
+```
+> Note: Unnamed.js has a builtin body parser that listens to data event and attaches to request object. You don't need to install external library such as body parser.
 
 ### Response methods
 
