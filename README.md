@@ -88,9 +88,10 @@ server.DELETE("/", (request, response) => {
 ```javascript
 server.POST("/post", async (request, response) => {
   const post = await new Post(request.body).save();
-  res.send(post);
+  response.send(post);
 });
 ```
+
 > Note: Unnamed.js has a builtin body parser that listens to data event and attaches to request object. You don't need to install external library such as body parser.
 
 ### Response methods
@@ -99,7 +100,7 @@ server.POST("/post", async (request, response) => {
   - Syntax:
   ```typescript
   const status: number = 200;
-  server.code(status);
+  response.code(status);
   ```
 - send() - This method basically sends the HTTP response. The body parameter can be a String or a Buffer object or an object or an Array. It accepts a single parameter body that describe the body which is to be sent in the response. It also automatically parse the body into JSON if possible.
   - Syntax:
@@ -109,7 +110,7 @@ server.POST("/post", async (request, response) => {
     name: Mart Anthony Salazar,
     age: 19
   }
-  server.send(body)
+  response.send(body)
   ```
 
 ### Router for modular code
