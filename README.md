@@ -12,10 +12,16 @@ A minimal node http server framework by [Mart Anthony Salazar](https://github.co
 
 ### Getting started
 
-Call the unnamed function and assign it to a variable
+- Install the unnamed-js package using yarn or npm
+
+```bash
+npm i unnamed-js
+```
+
+- In your main script, call the unnamed function and assign it to a variable
 
 ```javascript
-const unnamed = require("./src");
+const unnamed = require("unnamed-js");
 
 const server = unnamed({
   port: 3000,
