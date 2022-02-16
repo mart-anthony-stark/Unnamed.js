@@ -1,6 +1,6 @@
 # Unnamed.js
 
-A minimal node http server framework
+A minimal node http server framework by [Mart Anthony Salazar](https://github.com/mart-anthony-stark)
 
 - [Getting Started](https://github.com/mart-anthony-stark/Unnamed.js#getting-started)
 - [Routes](https://github.com/mart-anthony-stark/Unnamed.js#routes)
