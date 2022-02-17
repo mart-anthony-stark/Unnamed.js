@@ -43,8 +43,8 @@ const server = unnamed({
 server.middleware(cors("*"));
 ```
 
-````javascript
-server.middleware((request, response)=>{
+```javascript
+server.middleware((request, response) => {
   request.user = user;
 });
 ```
@@ -189,4 +189,7 @@ const routes = [
 
 module.exports = routes;
 ```
-````
+
+```
+
+```
