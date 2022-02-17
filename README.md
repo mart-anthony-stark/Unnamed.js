@@ -3,6 +3,7 @@
 A minimal node http server framework by [Mart Anthony Salazar](https://github.com/mart-anthony-stark)
 
 - [Getting Started](https://github.com/mart-anthony-stark/Unnamed.js#getting-started)
+- [Middlewares](https://github.com/mart-anthony-stark/Unnamed.js#middlewares)
 - [Routes](https://github.com/mart-anthony-stark/Unnamed.js#routes)
 - [Request](https://github.com/mart-anthony-stark/Unnamed.js#request-object)
 - [Response](https://github.com/mart-anthony-stark/Unnamed.js#response-methods)
@@ -27,6 +28,20 @@ const server = unnamed({
 ```
 
 ![server](https://github.com/mart-anthony-stark/Unnamed.js/blob/main/docs/start%20server.png?raw=true)
+
+### Middlewares
+
+- Middleware functions are methods that have access to the request object and the response object.
+
+```javascript
+server.middleware(cors("*"));
+```
+
+````javascript
+server.middleware((request, response)=>{
+  request.user = user;
+});
+```
 
 ### Routes
 
@@ -54,7 +69,7 @@ server.PATCH("/", (request, response) => {
 server.DELETE("/", (request, response) => {
   response.code(200).send({ method: request.method, msg: "Hello world" });
 });
-```
+````
 
 ### Request object
 
