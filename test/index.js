@@ -1,9 +1,12 @@
 const unnamed = require("../lib");
 const { GET, POST, PUT, PATCH, DELETE } = require("../lib/http-methods");
 
-const server = unnamed({
-  port: 3000,
-});
+const server = unnamed(
+  {
+    port: 3000,
+  },
+  { log: false }
+);
 
 server.middleware((req, res) => {
   console.log("middleware");
@@ -30,7 +33,6 @@ PATCH("/user", (req, res) => {
 DELETE("/user", (req, res) => {
   res.send("DELETE" + req.user);
 });
-
 GET("/user/:id", (req, res) => {
   res.send({ userId: req.params.id });
 });
