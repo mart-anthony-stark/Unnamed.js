@@ -1,5 +1,5 @@
 const unnamed = require("../lib");
-const { GET } = require("../lib/http-methods");
+const { GET, POST, PUT, PATCH, DELETE } = require("../lib/http-methods");
 
 const server = unnamed({
   port: 3000,
@@ -17,4 +17,16 @@ server.registerRouter({
 
 GET("/user", (req, res) => {
   res.send("Hello" + req.user);
+});
+POST("/user", (req, res) => {
+  res.send("POST" + req.user);
+});
+PUT("/user", (req, res) => {
+  res.send("PUT" + req.user);
+});
+PATCH("/user", (req, res) => {
+  res.send("PATCH" + req.user);
+});
+DELETE("/user", (req, res) => {
+  res.send("DELETE" + req.user);
 });
