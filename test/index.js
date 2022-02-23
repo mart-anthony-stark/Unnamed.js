@@ -1,5 +1,4 @@
-const unnamed = require("../lib");
-const { GET, POST, PUT, PATCH, DELETE } = require("../lib/http-methods");
+const unnamed = require("unnamed-js");
 
 const server = unnamed(
   {
@@ -18,21 +17,21 @@ server.registerRouter({
   router: require("./auth.route"),
 });
 
-GET("/user", (req, res) => {
+server.GET("/user", (req, res) => {
   res.send("Hello" + req.user);
 });
-POST("/user", (req, res) => {
+server.POST("/user", (req, res) => {
   res.send("POST" + req.user);
 });
-PUT("/user", (req, res) => {
+server.PUT("/user", (req, res) => {
   res.send("PUT" + req.user);
 });
-PATCH("/user", (req, res) => {
+server.PATCH("/user", (req, res) => {
   res.send("PATCH" + req.user);
 });
-DELETE("/user", (req, res) => {
+server.DELETE("/user", (req, res) => {
   res.send("DELETE" + req.user);
 });
-GET("/user/:id", (req, res) => {
+server.GET("/user/:id", (req, res) => {
   res.send({ userId: req.params.id });
 });
