@@ -20,6 +20,7 @@ npm i unnamed-js
 ```
 
 - In your main script, call the unnamed function and assign it to a variable
+  There are 2 ways to start the server, if you passed the options when calling the method, the server will automatically start.
 
 ```javascript
 const unnamed = require("unnamed-js");
@@ -31,6 +32,14 @@ const server = unnamed({
     console.log("App is running");
   },
 });
+```
+
+or you can start the server manually
+
+```javascript
+const server = unnamed();
+const PORT = 3000;
+server.startServer(PORT, callback);
 ```
 
 ![server](https://github.com/mart-anthony-stark/Unnamed.js/blob/main/docs/start%20server.png?raw=true)
@@ -77,6 +86,13 @@ server.DELETE("/", (request, response) => {
 });
 ```
 
+In the main script, you can import directly the http methods
+
+````javascript
+const { GET, POST, PUT, PATCH, DELETE } = require("unnamed/http-methods");
+GET("/", (req, res) => {
+  res.send("Hello");
+});
 ### Request object
 
 - query - endpoint queries can be accessed through request.query object
@@ -90,7 +106,7 @@ server.DELETE("/", (request, response) => {
       age: request.query.age,
     });
   });
-  ```
+````
 
 - params - Params object contains parameter values parsed from the URL path
 
