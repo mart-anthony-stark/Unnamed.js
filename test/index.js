@@ -1,4 +1,5 @@
 const unnamed = require("../lib");
+const { GET } = require("../lib/http-methods");
 
 const server = unnamed({
   port: 3000,
@@ -14,6 +15,6 @@ server.registerRouter({
   router: require("./auth.route"),
 });
 
-server.GET("/user", (req, res) => {
+GET("/user", (req, res) => {
   res.send("Hello" + req.user);
 });
