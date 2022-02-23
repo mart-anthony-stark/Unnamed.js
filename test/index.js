@@ -30,3 +30,7 @@ PATCH("/user", (req, res) => {
 DELETE("/user", (req, res) => {
   res.send("DELETE" + req.user);
 });
+
+GET("/user/:id", (req, res) => {
+  res.send({ userId: req.params.id });
+});
