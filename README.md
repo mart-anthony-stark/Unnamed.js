@@ -89,10 +89,12 @@ server.DELETE("/", (request, response) => {
 In the main script, you can import directly the http methods
 
 ````javascript
-const { GET, POST, PUT, PATCH, DELETE } = require("unnamed/http-methods");
+const { GET, POST, PUT, PATCH, DELETE } = server;
 GET("/", (req, res) => {
   res.send("Hello");
 });
+
+```
 ### Request object
 
 - query - endpoint queries can be accessed through request.query object
