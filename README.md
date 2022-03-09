@@ -93,8 +93,8 @@ const { GET, POST, PUT, PATCH, DELETE } = server;
 GET("/", (req, res) => {
   res.send("Hello");
 });
-
 ```
+
 ### Request object
 
 - query - endpoint queries can be accessed through request.query object
@@ -102,30 +102,30 @@ GET("/", (req, res) => {
   - Sample endpoint: http://localhost:3000/user?name=mart&age=19
 
 ```javascript
-  server.GET("/user", (request, response) => {
-    res.send({
-      username: request.query.name,
-      age: request.query.age,
-    });
+GET("/user", (request, response) => {
+  res.send({
+    username: request.query.name,
+    age: request.query.age,
   });
+});
 ```
 
 - params - Params object contains parameter values parsed from the URL path
 
   - Sample endpoint: http://localhost:3000/user/123456
 
-  ```javascript
-  server.GET("/user/:id", (request, response) => {
-    res.send({
-      userId: request.params.id,
-    });
+```javascript
+GET("/user/:id", (request, response) => {
+  res.send({
+    userId: request.params.id,
   });
-  ```
+});
+```
 
 - body - The read-only body property of the Request interface contains a ReadableStream with the body contents that have been added to the request.
 
 ```javascript
-server.POST("/post", async (request, response) => {
+POST("/post", async (request, response) => {
   const post = await new Post(request.body).save();
   response.send(post);
 });
@@ -166,7 +166,7 @@ server.registerRouter({
 - Inside 'routes/user.route.js' file, define a function that accepts 'route' parameter
 
 ```javascript
-const userRouter = ({GET}) => {
+const userRouter = ({ GET }) => {
   GET("/all", { beforeEnter: [] }, (req, res) => {
     res.send({
       data: "this is a user router",
