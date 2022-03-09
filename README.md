@@ -86,7 +86,7 @@ server.DELETE("/", (request, response) => {
 });
 ```
 
-In the main script, you can import directly the http methods
+In the main script, you can use directly the http methods by destructuring the server object
 
 ```javascript
 const { GET, POST, PUT, PATCH, DELETE } = server;
