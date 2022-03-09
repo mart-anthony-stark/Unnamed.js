@@ -88,7 +88,7 @@ server.DELETE("/", (request, response) => {
 
 In the main script, you can import directly the http methods
 
-````javascript
+```javascript
 const { GET, POST, PUT, PATCH, DELETE } = server;
 GET("/", (req, res) => {
   res.send("Hello");
@@ -101,14 +101,14 @@ GET("/", (req, res) => {
 
   - Sample endpoint: http://localhost:3000/user?name=mart&age=19
 
-  ```javascript
+```javascript
   server.GET("/user", (request, response) => {
     res.send({
       username: request.query.name,
       age: request.query.age,
     });
   });
-````
+```
 
 - params - Params object contains parameter values parsed from the URL path
 
