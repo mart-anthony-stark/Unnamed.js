@@ -166,8 +166,8 @@ server.registerRouter({
 - Inside 'routes/user.route.js' file, define a function that accepts 'route' parameter
 
 ```javascript
-const userRouter = (route) => {
-  route.GET("/all", { beforeEnter: [] }, (req, res) => {
+const userRouter = ({GET}) => {
+  GET("/all", { beforeEnter: [] }, (req, res) => {
     res.send({
       data: "this is a user router",
       method: req.method,
