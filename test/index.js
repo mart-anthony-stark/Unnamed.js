@@ -1,5 +1,5 @@
 const unnamed = require("unnamed-js");
-const morgan = require('morgan')
+const morgan = require("morgan");
 
 const server = unnamed(
   {
@@ -10,8 +10,7 @@ const server = unnamed(
 
 const { GET, POST, PUT, PATCH, DELETE } = server;
 
-server.middleware(morgan("short"))
-
+server.middleware(morgan("tiny"));
 
 server.registerRouter({
   prefix: "auth",
