@@ -152,6 +152,8 @@ POST("/post", async (request, response) => {
   response.send(body)
   ```
 
+- goto() - This method redirects the to the URL derived from the specified path.
+
 ### Router for modular code
 
 the server object comes up with a registerRouter() method to include routes from another javascript file
