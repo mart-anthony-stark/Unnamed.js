@@ -9,7 +9,7 @@ var routes = {
   route2: "route2",
   route3: {
     method: "post",
-    route: "postRoute",
+    route: "/user",
     data: {
       test: true,
       moreData: "aString",
@@ -18,5 +18,7 @@ var routes = {
 };
 
 apiBenchmark.measure(service, routes, function (err, results) {
-  console.log(results);
+  console.log({ stats: results.server1.route1 });
+  console.log({ stats: results.server1.route2 });
+  console.log({ stats: results.server1.route3 });
 });
