@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "api-benchmark": "^1.0.1",
     "morgan": "^1.10.0",
     "unnamed-js": "^1.1.0"
   }
