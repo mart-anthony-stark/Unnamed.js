@@ -18,7 +18,9 @@ server.registerRouter({
   prefix: "auth",
   router: require("./auth.route"),
 });
-
+GET("/", (req, res) => {
+  res.goto("/user");
+});
 GET("/user", (req, res) => {
   res.send("Hello" + req.user);
 });
