@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "api-benchmark": "^1.0.1",
+    "ddos-stress": "^0.1.0",
     "express": "^4.17.3",
     "fastify": "^3.27.4",
     "koa": "^2.13.4",
