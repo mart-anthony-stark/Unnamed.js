@@ -10,11 +10,19 @@
     "type": "git",
     "url": "git+https://github.com/mart-anthony-stark/Node-http-library-implementation.git"
   },
-  "keywords": ["http-server", "node", "unnamed", "api"],
+  "keywords": [
+    "http-server",
+    "node",
+    "unnamed",
+    "api"
+  ],
   "author": "Mart Salazar | mart-anthony-stark",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mart-anthony-stark/Node-http-library-implementation/issues"
   },
-  "homepage": "https://github.com/mart-anthony-stark/Node-http-library-implementation#readme"
+  "homepage": "https://github.com/mart-anthony-stark/Node-http-library-implementation#readme",
+  "dependencies": {
+    "autocannon": "^7.7.0"
+  }
 }
