@@ -4,13 +4,13 @@
  * @returns {Promise}
  * Automatically handles and catches
  */
-const catcher = (fn, cb) => (req, res) => {
-  Promise.resolve(fn(req, res)).catch((err) => {
+const catcher = (fn, cb) => (req, reply) => {
+  Promise.resolve(fn(req, reply)).catch((err) => {
     if (cb) {
-      cb(req, res);
+      cb(req, reply);
       return;
     }
-    res.code(500).send({ msg: err.message });
+    reply.code(500).send({ msg: err.message });
   });
 };
 
