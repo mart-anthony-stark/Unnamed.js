@@ -131,7 +131,7 @@ POST("/post", async (request, response) => {
 });
 ```
 
-> Note: Unnamed.js has a builtin body parser that listens to data event and attaches to request object. You don't need to install external library such as body parser.
+> Note: Unnamed.js has a built-in body parser that listens to data event and attaches to request object. You don't need to install external library such as body parser.
 
 ### Response methods
 
