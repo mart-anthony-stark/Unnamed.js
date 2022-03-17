@@ -151,6 +151,13 @@ POST("/post", async (request, response) => {
   }
   response.send(body)
   ```
+- You can also render html using HTML String
+
+```javascript
+response.send(`<input type="text" name="username" placeholder="Username" />`);
+```
+
+> HTML input tag rendered in unnamed-js response.send reduces the vulnerability in reflected xss attacks (tested using xsstrike)
 
 - goto() - This method redirects the to the URL derived from the specified path.
 
