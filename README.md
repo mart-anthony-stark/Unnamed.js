@@ -2,6 +2,9 @@
 
 A minimal node http server framework by [Mart Anthony Salazar](https://github.com/mart-anthony-stark)
 
+## API latency comparison with other frameworks
+![comparison](https://github.com/mart-anthony-stark/Unnamed.js/blob/test/docs/latency.png?raw=true)
+
 - [Getting Started](https://github.com/mart-anthony-stark/Unnamed.js#getting-started)
 - [Middlewares](https://github.com/mart-anthony-stark/Unnamed.js#middlewares)
 - [Routes](https://github.com/mart-anthony-stark/Unnamed.js#routes)
