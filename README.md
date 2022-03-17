@@ -156,42 +156,13 @@ POST("/post", async (request, response) => {
 
 ### Router for modular code
 
-the server object comes up with a registerRouter() method to include routes from another javascript file
-
-```javascript
-server.registerRouter({
-  prefix: "users", // will be added to the URL path
-  router: require("./routes/user.route"),
-});
-```
-
-- Inside 'routes/user.route.js' file, define a function that accepts 'route' parameter
-
-```javascript
-const userRouter = ({ GET }) => {
-  GET("/all", { beforeEnter: [] }, (req, res) => {
-    res.send({
-      data: "this is a user router",
-      method: req.method,
-      url: req.url,
-    });
-  });
-};
-
-module.exports = userRouter;
-```
-
-- Since there is a prefix indicated in the registerRouter() method, sample endpoint will look like this: http://localhost:5000/user/all
-
-### Combine Routers
-
-Another option for registering routers is to combine them using combineRouters() method.
-
+The server object comes up with a router() method to include routes from another javascript file.
+- This takes a parameter of array of objects
 - For example, you have two routers: auth and users
 
 ```javascript
 // app.js
-server.combineRouters(require("./routes"));
+server.router(require("./routes"));
 ```
 
 ```javascript
