@@ -157,6 +157,7 @@ POST("/post", async (request, response) => {
 ### Router for modular code
 
 The server object comes up with a router() method to include routes from another javascript file.
+
 - This takes a parameter of array of objects
 - For example, you have two routers: auth and users
 
@@ -179,4 +180,10 @@ const routes = [
 ];
 
 module.exports = routes;
+```
+
+- For the users route:
+
+```javascript
+const userRoute = ({ GET, POST, PUT, PATCH, DELETE }) => {};
 ```
