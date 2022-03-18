@@ -85,24 +85,6 @@ This framework supports the 5 commonly-used HTTP request methods. The methods ca
 - PATCH
 - DELETE
 
-```javascript
-server.GET("/", (request, response) => {
-  response.code(200).send({ method: request.method, msg: "Hello world" });
-});
-server.POST("/", (request, response) => {
-  response.code(200).send({ method: request.method, msg: "Hello world" });
-});
-server.PUT("/", (request, response) => {
-  response.code(200).send({ method: request.method, msg: "Hello world" });
-});
-server.PATCH("/", (request, response) => {
-  response.code(200).send({ method: request.method, msg: "Hello world" });
-});
-server.DELETE("/", (request, response) => {
-  response.code(200).send({ method: request.method, msg: "Hello world" });
-});
-```
-
 In the main script, you can use directly the http methods by destructuring the server object
 
 ```javascript
@@ -209,5 +191,11 @@ module.exports = routes;
 - For the users route:
 
 ```javascript
-const userRoute = ({ GET, POST, PUT, PATCH, DELETE }) => {};
+const userRoute = ({ GET, POST, PUT, PATCH, DELETE }) => {
+  GET('/', (request, response)=>{
+    response.send("User route)
+  })
+};
+
+module.exports = userRoute
 ```
