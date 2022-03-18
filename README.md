@@ -8,6 +8,8 @@ A minimal node http server framework by [Mart Anthony Salazar](https://github.co
 
 ## Latency comparison
 
+API Benchmark results using autocannon for API load testing
+
 | Rank     | Framework     | Req/Byte count | Time taken     | Data read      |
 | -------- | ------------- | -------------- | -------------- | -------------- | 
 |  1       | Fastify       | 87k requests   | 5.21s          | 13.1mb         |
