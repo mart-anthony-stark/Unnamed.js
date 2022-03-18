@@ -1,7 +1,7 @@
 # Unnamed.js
 
 <div align='center'>
-  <img src="https://github.com/mart-anthony-stark/Unnamed.js/blob/test/docs/UNNAMED.JS.png?raw=true" alt="Unnamed.js Logo" />
+  <img src="https://github.com/mart-anthony-stark/Unnamed.js/blob/test/docs/UNNAMED.JS-SM.png?raw=true" alt="Unnamed.js Logo" />
 </div>
 
 A minimal node http server framework by [Mart Anthony Salazar](https://github.com/mart-anthony-stark)
