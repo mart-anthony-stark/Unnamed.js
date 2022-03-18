@@ -9,11 +9,11 @@ A minimal node http server framework by [Mart Anthony Salazar](https://github.co
 ## Latency comparison
 
 | Rank     | Framework     | Req/Byte count | Time taken     | Data read      |
-|  1       | ------------- | -------------- | -------------- | -------------- | 
-|  2       | Fastify       | 87k requests   | 5.21s          | 13.1mb         |
-|  3       | Unnamed.js    | 77k requests   | 5.21s          | 11.6mb         |
-|  4       | Koa.js        | 56k requests   | 5.12s          | 8.29mb         |
-|  5       | Express.js    | 37k requests   | 5.1s           | 7.77mb         |
+| -------- | ------------- | -------------- | -------------- | -------------- | 
+|  1       | Fastify       | 87k requests   | 5.21s          | 13.1mb         |
+|  2       | Unnamed.js    | 77k requests   | 5.21s          | 11.6mb         |
+|  3       | Koa.js        | 56k requests   | 5.12s          | 8.29mb         |
+|  4       | Express.js    | 37k requests   | 5.1s           | 7.77mb         |
 
 ![image](https://github.com/mart-anthony-stark/Unnamed.js/blob/test/docs/latency%20table.png?raw=true)
 
