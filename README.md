@@ -9,6 +9,14 @@ A minimal node http server framework by [Mart Anthony Salazar](https://github.co
 ## Latency comparison
 
 ![image](https://github.com/mart-anthony-stark/Unnamed.js/blob/test/docs/latency.png?raw=true)
+
+| Framework     | Req/Byte count | Time taken     | Data read      |
+| ------------- | -------------- | -------------- | -------------- | 
+| Fastify       | 87k requests   | 5.21s          | 13.1mb         |
+| Unnamed.js    | 77k requests   | 5.21s          | 11.6mb         |
+| Koa.js        | 56k requests   | 5.12s          | 8.29mb         |
+| Express.js    | 37k requests   | 5.1s           | 7.77mb         |
+
 ![image](https://github.com/mart-anthony-stark/Unnamed.js/blob/test/docs/latency%20table.png?raw=true)
 
 - [Getting Started](https://github.com/mart-anthony-stark/Unnamed.js#getting-started)
