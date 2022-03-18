@@ -25,7 +25,7 @@ API Benchmark results using autocannon for API load testing
 - [Request](https://github.com/mart-anthony-stark/Unnamed.js#request-object)
 - [Response](https://github.com/mart-anthony-stark/Unnamed.js#response-methods)
 - [Modular Routing](https://github.com/mart-anthony-stark/Unnamed.js#router-for-modular-code)
-- [Setup Demo](https://github.com/mart-anthony-stark/Unnamed.js/tree/test-package/demoV2)
+- [Setup Demo](https://github.com/mart-anthony-stark/Unnamed.js/tree/test/test/demo)
 - [Unnamedjs cli](https://github.com/mart-anthony-stark/Unnamed-cli)
 
 ### Getting started
