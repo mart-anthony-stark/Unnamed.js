@@ -8,8 +8,6 @@ A minimal node http server framework by [Mart Anthony Salazar](https://github.co
 
 ## Latency comparison
 
-![image](https://github.com/mart-anthony-stark/Unnamed.js/blob/test/docs/latency.png?raw=true)
-
 | Framework     | Req/Byte count | Time taken     | Data read      |
 | ------------- | -------------- | -------------- | -------------- | 
 | Fastify       | 87k requests   | 5.21s          | 13.1mb         |
