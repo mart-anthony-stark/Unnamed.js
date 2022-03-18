@@ -1,8 +1,12 @@
 # Unnamed.js
 
+<div center>
+  <img src="https://github.com/mart-anthony-stark/Unnamed.js/blob/test/docs/UNNAMED.JS.png?raw=true" alt="Unnamed.js Logo" />
+</div>
 A minimal node http server framework by [Mart Anthony Salazar](https://github.com/mart-anthony-stark)
 
 ## Latency comparison
+
 ![image](https://github.com/mart-anthony-stark/Unnamed.js/blob/test/docs/latency.png?raw=true)
 ![image](https://github.com/mart-anthony-stark/Unnamed.js/blob/test/docs/latency%20table.png?raw=true)
 
@@ -39,7 +43,7 @@ const server = unnamed({
 ```
 
 or you can start the server manually
- 
+
 ```javascript
 const server = unnamed();
 const PORT = 3000;
