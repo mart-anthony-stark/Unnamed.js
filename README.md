@@ -10,12 +10,12 @@ A minimal node http server framework by [Mart Anthony Salazar](https://github.co
 
 API Benchmark results using autocannon for API load testing
 
-| Rank     | Framework     | Req/Byte count | Time taken     | Data read      |
-| -------- | ------------- | -------------- | -------------- | -------------- | 
-|  1       | Fastify       | 87k requests   | 5.21s          | 13.1mb         |
-|  2       | Unnamed.js    | 77k requests   | 5.21s          | 11.6mb         |
-|  3       | Koa.js        | 56k requests   | 5.12s          | 8.29mb         |
-|  4       | Express.js    | 37k requests   | 5.1s           | 7.77mb         |
+| Rank | Framework  | Req/Byte count | Time taken | Data read |
+| ---- | ---------- | -------------- | ---------- | --------- |
+| 1    | Fastify    | 87k requests   | 5.21s      | 13.1mb    |
+| 2    | Unnamed.js | 77k requests   | 5.21s      | 11.6mb    |
+| 3    | Koa.js     | 56k requests   | 5.12s      | 8.29mb    |
+| 4    | Express.js | 37k requests   | 5.1s       | 7.77mb    |
 
 ![image](https://github.com/mart-anthony-stark/Unnamed.js/blob/test/docs/latency%20table.png?raw=true)
 
@@ -25,8 +25,8 @@ API Benchmark results using autocannon for API load testing
 - [Request](https://github.com/mart-anthony-stark/Unnamed.js#request-object)
 - [Response](https://github.com/mart-anthony-stark/Unnamed.js#response-methods)
 - [Modular Routing](https://github.com/mart-anthony-stark/Unnamed.js#router-for-modular-code)
-- [Combine Routers](https://github.com/mart-anthony-stark/Unnamed.js#combine-routers)
 - [Setup Demo](https://github.com/mart-anthony-stark/Unnamed.js/tree/test-package/demoV2)
+- [Unnamedjs cli]()
 
 ### Getting started
 
