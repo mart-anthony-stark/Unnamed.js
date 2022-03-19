@@ -10,7 +10,7 @@ const catcher = (fn, cb) => (req, response) => {
       cb(req, response);
       return;
     }
-    response.code(500).send({ msg: err.message });
+    response.code(400).send({ msg: err.message || err });
   });
 };
 
