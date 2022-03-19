@@ -197,5 +197,5 @@ const userRoute = ({ GET, POST, PUT, PATCH, DELETE }) => {
   })
 };
 
-module.exports = userRoute
+module.exports = userRoute;
 ```
