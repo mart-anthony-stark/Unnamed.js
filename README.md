@@ -224,3 +224,16 @@ const userRoute = ({ GET }) => {
 
 module.exports = userRoute;
 ```
+
+- bannedKeys - an array that will remove the matching keys in request body
+  - Sample code
+
+```javascript
+const userRoute = ({ POST }) => {
+  GET('/create', {bannedKeys:["address", "number"]},(request, response)=>{
+    response.send("User route)
+  })
+};
+
+module.exports = userRoute;
+```
