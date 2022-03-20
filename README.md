@@ -25,6 +25,7 @@ API Benchmark results using autocannon for API load testing
 - [Request](https://github.com/mart-anthony-stark/Unnamed.js#request-object)
 - [Response](https://github.com/mart-anthony-stark/Unnamed.js#response-methods)
 - [Modular Routing](https://github.com/mart-anthony-stark/Unnamed.js#router-for-modular-code)
+- [Route Options](https://github.com/mart-anthony-stark/Unnamed.js#route-options)
 - [Setup Demo](https://github.com/mart-anthony-stark/Unnamed.js/tree/test/test/demo)
 - [Unnamedjs cli](https://github.com/mart-anthony-stark/Unnamed-cli)
 
@@ -193,6 +194,30 @@ module.exports = routes;
 ```javascript
 const userRoute = ({ GET, POST, PUT, PATCH, DELETE }) => {
   GET('/', (request, response)=>{
+    response.send("User route)
+  })
+};
+
+module.exports = userRoute;
+```
+
+### Route Options
+
+Here are some options you can define when registering a specificoute
+
+- beforeEnter - an array of methods that will fire before entering the route, this can access the request and response objects
+  - Sample code:
+
+```javascript
+const {verifyUser} = require('../utils/verify')
+
+const checkAdmin = async(request,response)=>{
+  const isAdmin = await verifyUser()
+  if(!isAdmin) return response.code(401).send({msg:"You cannot access this route"})
+}
+
+const userRoute = ({ GET }) => {
+  GET('/', {beforeEnter: [isAdmin]},(request, response)=>{
     response.send("User route)
   })
 };
