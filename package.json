@@ -1,6 +1,6 @@
 {
   "name": "unnamed-js",
-  "version": "2.0.17",
+  "version": "2.0.18",
   "description": "A minimal node http server framework",
   "main": "index.js",
   "scripts": {
